@@ -57,8 +57,9 @@ var resultText = "";
 // 効果音再生
 
 function PlaySound() {
-  var audio = document.getElementById("audio");
-  audio.play();
+  $("#source").attr('src', "mp3/se.mp3");
+  $("#audio").trigger("load");
+  $("#audio").trigger("play");
 }
 
 function startBingo() {
