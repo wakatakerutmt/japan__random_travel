@@ -56,15 +56,9 @@ var resultText = "";
 
 // 効果音再生
 
-var audioElem;
-
 function PlaySound() {
-  audioElem = new Audio();
-  audioElem.src = "mp3/se.mp3";
-  audioElem.play();
-}
-function StopSound() {
-  audioElem.pause();
+  var audio = document.getElementById("audio");
+  audio.play();
 }
 
 function startBingo() {
