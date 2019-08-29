@@ -1,11 +1,5 @@
 // 選択候補
-var prefectureList = [
-  "三重県",
-  "岡山県",
-  "岐阜県",
-  "鳥取県",
-  "香川県",
-];
+var prefectureList = ["三重県", "岡山県", "岐阜県", "鳥取県", "香川県"];
 
 var prefectures = [
   "北海道",
@@ -60,6 +54,19 @@ var prefectures = [
 var isStop = true;
 var resultText = "";
 
+// 効果音再生
+
+var audioElem;
+
+function PlaySound() {
+  audioElem = new Audio();
+  audioElem.src = "mp3/se.mp3";
+  audioElem.play();
+}
+function StopSound() {
+  audioElem.pause();
+}
+
 function startBingo() {
   // ボタンの表示切り替え
   document.querySelector("#start").style.display = "none";
@@ -91,6 +98,9 @@ function roulette() {
     clearTimeout(id);
     starfall(); // 星降らせる
     textAppear(); // エフェクト文字を表示する
+
+    setTimeout("PlaySound();", 2000);
+
     return false;
   }
 
