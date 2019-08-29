@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>日本列島 ルーレットの旅!!</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .inner{
+      height: 960px;
+      width: 640px;
+      margin:0 auto;
+      background-image: url("img/japan.jpg")
+    }
+    h1{
+      padding-top: 50px;
+    }
+    #view {
+      margin-top: 100px;
+      font-size: 100px;
+    }
+    footer{
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+
+
+    .star {
+      animation: kirakira 8s linear;
+      color: yellow;
+      display: inline-block;
+      height: 1em;
+      line-height: 1em;
+      position: fixed;
+      top: -1em;
+      z-index: 1000;
+    }
+
+    @keyframes kirakira {
+      0% {
+          transform:translateY(0) rotateY(0);
+      }
+      100% {
+          transform:translateY(calc(100vh + 1em)) rotateY(3600deg);
+      }
+    }
+
+/* 文字のエフェクト */
+    #wrapper {
+      text-align: center;
+      width: 500px;
+      height: 300px;
+      margin: 0 auto;
+    }
+    .text:nth-child(30) {
+      font-size: 120px;
+    }
+    .text:nth-child(29) {
+      font-size: 117px;
+    }
+    .text:nth-child(28) {
+      font-size: 114px;
+    }
+    .text:nth-child(27) {
+      font-size: 111px;
+    }
+    .text:nth-child(26) {
+      font-size: 108px;
+    }
+    .text:nth-child(25) {
+      font-size: 105px;
+    }
+    .text:nth-child(24) {
+      font-size: 102px;
+    }
+    .text:nth-child(23) {
+      font-size: 99px;
+    }
+    .text:nth-child(22) {
+      font-size: 96px;
+    }
+    .text:nth-child(21) {
+      font-size: 93px;
+    }
+    .text:nth-child(20) {
+      font-size: 90px;
+    }
+    .text:nth-child(19) {
+      font-size: 87px;
+    }
+    .text:nth-child(18) {
+      font-size: 84px;
+    }
+    .text:nth-child(17) {
+      font-size: 81px;
+    }
+    .text:nth-child(16) {
+      font-size: 78px;
+    }
+    .text:nth-child(15) {
+      font-size: 75px;
+    }
+    .text:nth-child(14) {
+      font-size: 72px;
+    }
+    .text:nth-child(13) {
+      font-size: 69px;
+    }
+    .text:nth-child(12) {
+      font-size: 66px;
+    }
+    .text:nth-child(11) {
+      font-size: 63px;
+    }
+    .text:nth-child(10) {
+      font-size: 60px;
+    }
+    .text:nth-child(9) {
+      font-size: 57px;
+    }
+    .text:nth-child(8) {
+      font-size: 54px;
+    }
+    .text:nth-child(7) {
+      font-size: 51px;
+    }
+    .text:nth-child(6) {
+      font-size: 48px;
+    }
+    .text:nth-child(5) {
+      font-size: 45px;
+    }
+    .text:nth-child(4) {
+      font-size: 42px;
+    }
+    .text:nth-child(3) {
+      font-size: 39px;
+    }
+    .text:nth-child(2) {
+      font-size: 36px;
+    }
+    .text:nth-child(1) {
+      font-size: 33px;
+    }
+    .text {
+      cursor: default;
+      position: absolute;
+      height: 50%;
+      width: 100%;
+      min-height: 50%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      -webkit-text-fill-color: black;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: white;
+      left: 50%;
+      transform: translate(-50%);
+      letter-spacing: 10px;
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="inner">
+    <header style="text-align:center;">
+      <h1>日本列島　ルーレットの旅!!</h1>
+    </header>
+    <section style="text-align:center;">
+      <input type="button" id="start" name="start" value="スタート" onclick="startBingo()">
+      <input type="button" id="stop" name="stop" value="ストップ" onclick="stopBingo()" style="display:none;">
+      <br>
+      <div id="view" style="text-align:center;"></div>
+
+      <div id="out"></div>
+      <div id="wrapper">
+        <div class="text">Infinite</div>
+        <div class="text">Infinite</div>
+        <div class="text">Infinite</div>
+        <div class="text">Infinite</div>
+        <div class="text">Infinite</div>
+        <div class="text">Infinite</div>
+        <div class="text">Infinite</div>
+        <div class="text">Infinite</div>
+        <div class="text">Infinite</div>
+        <div class="text">Infinite</div>
+        <div class="text">Infinite</div>
+        <div class="text">Infinite</div>
+        <div class="text">Infinite</div>
+        <div class="text">Infinite</div>
+        <div class="text">Infinite</div>
+        <div class="text">Infinite</div>
+        <div class="text">Infinite</div>
+        <div class="text">Infinite</div>
+        <div class="text">Infinite</div>
+        <div class="text">Infinite</div>
+        <div class="text">Infinite</div>
+        <div class="text">Infinite</div>
+        <div class="text">Infinite</div>
+        <div class="text">Infinite</div>
+        <div class="text">Infinite</div>
+        <div class="text">Infinite</div>
+        <div class="text">Infinite</div>
+        <div class="text">Infinite</div>
+        <div class="text">Infinite</div>
+        <div class="text">Infinite</div>
+      </div>
+      
+    </section>
+
+    <footer>
+      <hr />
+      <p style="text-align:center; width: 640px;">
+        Copyright &copy; 
+        <script type="text/javascript">  
+          document.write(new Date().getFullYear());
+        </script>
+        <span>IIDA TAKUYA</span> All Rights Reserved.
+      </p>
+    </footer>
+  </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/TimelineLite.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
