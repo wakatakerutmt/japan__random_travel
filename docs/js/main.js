@@ -1,5 +1,31 @@
 // 選択候補
-var prefectureList = ["三重県", "岡山県", "岐阜県", "鳥取県", "香川県"];
+var prefectureList = [
+  "新潟県",
+  "富山県",
+  "石川県",
+  "福井県",
+  "山梨県",
+  "長野県",
+  "岐阜県",
+  "静岡県",
+  "愛知県",
+  "三重県",
+  "滋賀県",
+  "京都府",
+  "大阪府",
+  "兵庫県",
+  "奈良県",
+  "和歌山県",
+  "鳥取県",
+  "島根県",
+  "岡山県",
+  "広島県",
+  "山口県",
+  "徳島県",
+  "香川県",
+  "愛媛県",
+  "高知県"
+];
 
 var prefectures = [
   "北海道",
@@ -57,7 +83,7 @@ var resultText = "";
 // 効果音再生
 
 function PlaySound() {
-  $("#source").attr('src', "mp3/se.mp3");
+  $("#source").attr("src", "mp3/se.mp3");
   $("#audio").trigger("load");
   $("#audio").trigger("play");
 }
@@ -84,9 +110,6 @@ function roulette() {
 
   // ストップボタンが押された
   if (isStop) {
-    if (prefectureList[rnd2] != "三重県") {
-      rnd2 = Math.floor(Math.random() * prefectureList.length);
-    }
     document.querySelector("#view").style.display = "none"; // 文字を消す
     resultText = prefectureList[rnd2];
     // 遅延呼び出しを解除
