@@ -1,5 +1,5 @@
 // 選択候補
-var prefectureList = [
+const prefectureList = [
   "新潟県",
   "富山県",
   "石川県",
@@ -27,7 +27,7 @@ var prefectureList = [
   "高知県"
 ];
 
-var prefectures = [
+const prefectures = [
   "北海道",
   "青森県",
   "岩手県",
@@ -77,8 +77,8 @@ var prefectures = [
   "沖縄県"
 ];
 
-var isStop = true;
-var resultText = "";
+let isStop = true;
+let resultText = "";
 
 // 効果音再生
 
@@ -134,9 +134,9 @@ function starfall() {
   starMaker(50);
 }
 
-//星を作る関数。n は星の個数。多いほど星が多く振ります。
+//星を作る関数 n は星の個数
 function starMaker(n) {
-  var star = document.createElement("div");
+  const star = document.createElement("div");
   star.className = "star";
   star.textContent = "★";
   for (var i = 0; i < n; i++) {
@@ -144,10 +144,10 @@ function starMaker(n) {
   }
 }
 
-//星のセッティングをする関数。
+//星のセッティングをする関数
 function starSet(clone) {
-  var starClone = clone.cloneNode(true);
-  var starStyle = starClone.style;
+  const starClone = clone.cloneNode(true);
+  const starStyle = starClone.style;
 
   //星の位置（left）、アニメーションの遅延時間（animation-delay）、サイズ（font-size）をランダムで指定
   starStyle.left = 100 * Math.random() + "%";
@@ -160,7 +160,7 @@ function starSet(clone) {
     "animationend",
     function() {
       this.parentNode.removeChild(this);
-      var star = document.createElement("div");
+      const star = document.createElement("div");
       star.className = "star";
       star.textContent = "★";
       starSet(star);
@@ -172,7 +172,7 @@ function starSet(clone) {
 // ------------ 文字のアニメーション------------------------------
 
 function textAppear() {
-  var tl = new TimelineLite(),
+  let tl = new TimelineLite(),
     inter = 30,
     speed = 1,
     $text = $(".text");
